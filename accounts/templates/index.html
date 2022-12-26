@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+    <p>Привет, {{request.user.username}}</p>
+        <a href="{% url 'logout' %}">Выйти</a>
+    {% else %}
+        <a href="{% url 'register' %}">Зарегистрироваться</a>
+        <a href="{% url 'login' %}">Войти</a>
+    {% endif %}
+    <form class="all" action="add">
+        <div class="all__menu">
+            <div class="all__products">
+                <ul>
+                    <li>
+                        <p>Эспрессо - 120 руб.</p>
+                    </li>
+                    <li>
+                        <p>Американо - 120 руб.</p>
+                    </li>
+                    <li>
+                        <p>Мокка - 150 руб.</p>
+                    </li>
+                    <li>
+                        <p>Каппучино - 150 руб.</p>
+                    </li>
+                    <li>
+                        <p>Двойной Эспрессо - 120 руб.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="all__holls">
+                <ul>
+                    <li>
+                        <p>Большой зал - 3000 руб.</p>
+                    </li>
+                    <li>
+                        <p>Средний зал - 2000 руб.</p>
+                    </li>
+                    <li>
+                        <p>Малый зал - 1000 руб.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button type="submit"> Заказать</button>
+    </form>
+</body>
+</html>
